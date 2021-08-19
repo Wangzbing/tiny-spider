@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.tiny.cloud.spider.common.strategy.SpiderContext,\
+  com.tiny.cloud.spider.common.strategy.SpiderProcessor,\
+  com.tiny.cloud.spider.common.snowflake.IDGenerator,\
+  com.tiny.cloud.spider.common.thread.ThreadPoolManager

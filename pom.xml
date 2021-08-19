@@ -20,6 +20,7 @@
         <module>book-server</module>
         <module>music-spider</module>
         <module>music-server</module>
+        <module>manager</module>
         <module>common</module>
     </modules>
     <properties>
