@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ConditionalOnClass({SqlSessionFactory.class, SqlSessionFactoryBean.class})
 @EnableConfigurationProperties(MybatisProperties.class)
 @AutoConfigureAfter(MybatisConfiguration.class)
-@MapperScan(value = {"com.tiny.cloud.**.model.mapper"}, markerInterface = MapperInterface.class)
+@MapperScan(value = {"com.tiny.cloud.**.mapper"}, markerInterface = MapperInterface.class)
 @EnableTransactionManagement
 public class MybatisConfiguration {
 }

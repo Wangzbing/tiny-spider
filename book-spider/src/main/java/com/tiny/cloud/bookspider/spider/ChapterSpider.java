@@ -1,6 +1,10 @@
 package com.tiny.cloud.bookspider.spider;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.text.CharSequenceUtil;
+import com.tiny.cloud.bookspider.model.entity.BookChapter;
+import com.tiny.cloud.bookspider.model.repository.BookChapterRepository;
+import com.tiny.cloud.bookspider.spider.model.SpiderBO;
+import com.tiny.cloud.spider.common.base.StringPool;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,6 +19,7 @@ import us.codecraft.webmagic.selector.Html;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -23,12 +28,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @description
  */
 @Component
-public  class ChapterSpider implements PageProcessor {
+public  class ChapterSpider extends BaseSpider<SpiderBO> implements PageProcessor {
 
     @Resource
     ContentSpider contentSpider;
 
+    @Resource
+    BookChapterRepository chapterRepository;
+
     private final Site site = Site.me().setRetryTimes(1).setSleepTime(1000).setCharset("UTF-8");
+
     @Override
     public void process(Page page) {
         Html html = page.getHtml();
@@ -49,11 +58,21 @@ public  class ChapterSpider implements PageProcessor {
         AtomicInteger atomicInteger = new AtomicInteger();
         elements.forEach(s-> {
             String href = s.select("a").attr("href");
-            if (StrUtil.isNotEmpty(href)){
-                urls.put(atomicInteger.incrementAndGet(),href);
+            String text = s.select("a").text();
+            if (CharSequenceUtil.isNotEmpty(href)){
+                urls.put(atomicInteger.incrementAndGet(),href+ StringPool.SPLITTER+text);
             }
         });
-        urls.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(s-> Spider.create(contentSpider).addUrl(page.getUrl()+s.getValue()).thread(2).run());
+        urls.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(s-> {
+            String[] split = s.getValue().split(StringPool.SPLITTER);
+            getKeys().setOrder(s.getKey().longValue());
+            getKeys().setUrl(split[1]);
+            Optional<BookChapter> byOption = chapterRepository.findByOption(getKeys().getId(), s.getKey().longValue());
+            if (!byOption.isPresent()){
+                contentSpider.setKeys(getKeys());
+                Spider.create(contentSpider).addUrl(page.getUrl()+split[0]).run();
+            }
+        });
     }
 
     @Override
@@ -61,3 +80,5 @@ public  class ChapterSpider implements PageProcessor {
         return site;
     }
 }
+
+

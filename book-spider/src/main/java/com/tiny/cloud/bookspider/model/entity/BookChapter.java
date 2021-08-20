@@ -24,5 +24,5 @@ public class BookChapter extends BaseEntity {
   private Long contentLength;
   private String chapterUrl;
   private String content;
-  private Long order;
+  private Long chapterOrder;
 }

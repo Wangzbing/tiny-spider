@@ -49,9 +49,9 @@ public class BookInfoSpiderServiceImpl implements SpiderService {
     @Override
     public void saveContent(){
         List<BookInfo> all = repository.findAll().subList(0,2);
-        for (BookInfo bookInfo : all) {
-            ContentEvent contentEvent = new ContentEvent(bookInfo);
+        all.forEach(s->{
+            ContentEvent contentEvent = new ContentEvent(s);
             publisher.publishEvent(contentEvent);
-        }
+        });
     }
 }
