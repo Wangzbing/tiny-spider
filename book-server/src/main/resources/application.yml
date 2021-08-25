@@ -4,3 +4,10 @@ spring:
 
   profiles:
     active: dev
+# MyBatis
+mybatis:
+  configuration:
+    # 打印日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.tiny.cloud.service.book

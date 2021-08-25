@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>用户登录</title>
+    <meta name="keywords" content="epub,epub阅读器,在线epub阅读器,epub怎么打开,怎么打开epub,最好的epub阅读器">
+    <meta name="description" content="Tiny Reader提供体验绝佳的epub阅读体验，无需安装，无需下载，即开即用，可以帮你轻松打开任何epub文件。也许，它就是地球上最好用的epub阅读器！">
+    <!-- Vendor CSS -->
+    <link href="../static/css/fullcalendar.min.css" rel="stylesheet">
+    <link href="../static/css/animate.min.css" rel="stylesheet">
+    <link href="../static/css/sweet-alert.css" rel="stylesheet">
+    <link href="../static/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../static/css/material-design-iconic-font.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/app_1.min.css">
+    <link rel="stylesheet" href="../static/css/app_2.min.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/user-information-v2.css">
+    <link rel="shortcut icon" href="../static/imgs/favicon.ico">
+<body>
+<input id="thirdLogin" type="hidden" name="third" value="">
+<div class="container clearfix">
+    <div class="container-pos">
+        <div class="container-main">
+            <div class="user-login-top">
+                <h1 class="title">Tiny Reader</h1>
+                <p class="reader-info">新世代 ePub 阅读器，创造美好阅读时光</p>
+            </div>
+            <div class="user-login-dialog">
+                <div class="login-dialog-right three-party-login">
+                    <p class="login-title">快捷登录</p>
+                    <ul class="login-list">
+                        <li class="login-icon-btn three-party-btn three-party-qq qq-login-btn" id="qqLoginBtn">
+                        </li>
+                        <li class="login-icon-btn wx-login-btn">
+                            <a href="javascript:;" class="three-party-link three-party-wx">使用微信账号登录</a>
+                        </li>
+                        <li class="login-icon-btn three-party-btn three-party-wb wb-login-btn hide" id="wbLoginBtn">
+                            <a href="javascript:;" class="three-party-link three-party-wb">使用微博账号登录</a>
+                        </li>
+                        <li class="g-signin2 login-icon-btn gg-login-btn"></li>
+                        <li class="login-icon-btn fb-login-btn hide">
+                            <a href="javascript:;">Facebook 账号登录</a>
+                        </li>
+                    </ul>
+                    <div class="user-register-wrap">
+                        <a href="https://www.Tiny-reader.cn/app/page/register" class="user-register">注册新账号</a>
+                    </div>
+                </div>
+                <div class="login-dialog-left local-login">
+                    <form id="login-post" method="post">
+                        <p class="login-title">Tiny Reader 账号登录</p>
+                        <div class="login-message">
+                            <div class="form-group">
+                                <div class="username-icon">
+                                    <i class="zmdi zmdi-account"></i>
+                                </div>
+                                <div class="fg-line username">
+                                    <input type="text" id="account_id" class="form-control" placeholder="账号">
+                                </div>
+                                <small class="help-block"></small>
+                            </div>
+                            <div class="form-group">
+                                <div class="password-icon">
+                                    <i class="zmdi zmdi-lock"></i>
+                                </div>
+                                <div class="fg-line password">
+                                    <input type="password" id="account_password" class="form-control" placeholder="密码">
+                                </div>
+                                <small class="help-block"></small>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked="" value="">
+                                    <i class="input-helper"></i>
+                                    记住登录
+                                </label>
+                            </div>
+                            <div class="login-buttons">
+                                <a href="javascript:;" id="is-login" class="btn btn-info waves-effect">登录</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="g-login-wrap" id="js-dialog-login">
+    <a href="javascript:;" class="dialog-close js-close">×</a>
+    <div class="login-wx-wrapper">
+        <div class="login-title">
+        </div>
+        <ul class="login-tab">
+            <li class="current">微信扫码登录</li>
+        </ul>
+        <div class="login-wrap">
+            <div class="login-inner" id="wxLoginBtn"></div>
+        </div>
+        <p class="login-desc">微信扫一扫登录，安全、快捷</p>
+    </div>
+</div>
+<div class="g-dialog-mask" id="js-login-mask"></div>
+
+<!-- 三方登录js -->
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.cookie.min.js"></script>
+<script src="../static/js/loginAndRegister.js"></script>
+</body></html>

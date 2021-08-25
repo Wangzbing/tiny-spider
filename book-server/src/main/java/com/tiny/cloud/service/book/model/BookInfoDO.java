@@ -9,4 +9,10 @@ import lombok.Data;
  */
 @Data
 public class BookInfoDO {
+    private String bookName;
+    private Long bookId;
+    private String bookAuthorName;
+    private Long authorId;
+    private String bookIntro;
+    private String bookImage;
 }

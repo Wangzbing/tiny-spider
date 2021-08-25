@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://www.neat-reader.cn/account/infos -->
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>书库</title>
+    <link rel="shortcut icon" href="../static/imgs/favicon.ico">
+    <meta name="keywords" content="epub,epub阅读器,在线epub阅读器,epub怎么打开,怎么打开epub,最好的epub阅读器">
+    <meta name="description" content="Tiny Reader提供体验绝佳的epub阅读体验，无需安装，无需下载，即开即用，可以帮你轻松打开任何epub文件。也许，它就是地球上最好用的epub阅读器！">
+    <!-- Vendor CSS -->
+    <link href="../static/css/fullcalendar.min.css" rel="stylesheet">
+    <link href="../static/css/animate.min.css" rel="stylesheet">
+    <link href="../static/css/sweet-alert.css" rel="stylesheet">
+    <link href="../static/css/material-design-iconic-font.css" rel="stylesheet">
+    <link href="../static/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/app_1.min.css">
+    <link rel="stylesheet" href="../static/css/app_2.min.css">
+    <link rel="stylesheet" href="../static/css/cropper.min.css">
+    <link rel="stylesheet" href="../static/css/avatar.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/account-style.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/js/jquery.min.js">
+    <link rel="stylesheet" href="../static/js/bootstrap.min.js">
+    <!-- 引入tool中的icon -->
+    <link rel="stylesheet" href="../static/font/iconfont.css">
+    <!-- 引入常规样式 -->
+    <link rel="stylesheet" href="../static/css/tool.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <!-- 引入背景色 -->
+    <link rel="stylesheet" href="../static/css/li-bgc-color.css">
+<body>
+<input type="hidden" class="userId" name="userId" value="366456">
+<input type="hidden" class="start-time" name="startTime" value="1629680871000">
+<input type="hidden" class="next-time" name="nextTime" value="1630112871000">
+<input type="hidden" class="expire-time" name="expireTime" value="1630285671000">
+<input type="hidden" class="membership-trial" name="membershipIsTrial" value="1">
+<header id="header" class="clearfix account-header">
+    <h1 class="title"><a href="https://www.neat-reader.cn/">Tiny Reader</a></h1>
+</header>
+    <div class="container">
+        <h2 class="page-header">
+            <div class="row">
+                <div class="col-xs-3">小说</div>
+                <div class="col-xs-4 text-right pull-right"><a href="#">首页</a></div>
+            </div>
+        </h2>
+    </div>
+    <!-- 导航 -->
+    <div class="container tool-nav " style="padding-top: 95px;">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="/">男生小说</a></li>
+            <li role="presentation"><a href="/girls">女生小说</a></li>
+            <li role="presentation"><a href="/public">出版读物</a></li>
+        </ul>
+    </div>
+
+
+    <!-- 软件工具明细 -->
+    <div class="container" style="padding-top: 15px;" th:each="book:${allBooks}">
+        <!-- 添加标题 常用导航 -->
+        <div style="padding-top: 15px;padding-bottom: 15px" >
+            <span class="glyphicon glyphicon-tags"  th:text="${book.getName()}"></span>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-3 col-xs-12 col-sm-2 tool-li" th:each="ss:${book.getMy()}">
+                <a th:href="'/'+${ss.getBookId()}" target="_blank">
+                   <img th:src="${ss.getBookImage()}" alt="null">
+                </a>
+                <div class="text-left" style="margin-top:10px" th:text="${ss.getBookName}">name</div>
+                <div class="text-left text-color-height" th:text="${ss.getBookIntro()}">desc</div>
+                <div class="text-left text-color-height " th:text="${ss.getBookAuthorName()}">author</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>

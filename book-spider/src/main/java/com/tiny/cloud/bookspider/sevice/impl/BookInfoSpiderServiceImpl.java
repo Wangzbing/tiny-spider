@@ -3,6 +3,7 @@ package com.tiny.cloud.bookspider.sevice.impl;
 import com.tiny.cloud.bookspider.event.query.ContentEvent;
 import com.tiny.cloud.bookspider.event.query.InfoQueryEvent;
 import com.tiny.cloud.bookspider.model.entity.BookInfo;
+import com.tiny.cloud.bookspider.model.repository.BookChapterRepository;
 import com.tiny.cloud.bookspider.model.repository.BookInfoRepository;
 import com.tiny.cloud.bookspider.publish.Publisher;
 import com.tiny.cloud.bookspider.sevice.SpiderService;
@@ -28,6 +29,9 @@ public class BookInfoSpiderServiceImpl implements SpiderService {
 
     @Resource
     BookInfoRepository repository;
+
+    @Resource
+    BookChapterRepository chapterRepository;
     /**
      * 保存详情
      */
@@ -48,7 +52,7 @@ public class BookInfoSpiderServiceImpl implements SpiderService {
 
     @Override
     public void saveContent(){
-        List<BookInfo> all = repository.findAll().subList(0,2);
+        List<BookInfo> all = repository.findAll();
         all.forEach(s->{
             ContentEvent contentEvent = new ContentEvent(s);
             publisher.publishEvent(contentEvent);

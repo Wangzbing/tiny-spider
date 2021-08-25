@@ -1,4 +1,4 @@
-package com.tiny.cloud.common.config;
+package com.tiny.cloud.spider.common.orm;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Configuration;

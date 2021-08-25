@@ -1,0 +1,106 @@
+/*common*/
+::-webkit-input-placeholder {
+    color: #949494;
+    font-size: 12px;
+}
+
+/*---滚动条默认显示样式--*/
+::-webkit-scrollbar-thumb{
+    background-color:#d7d7d7;
+    height:50px;
+    outline-offset:-2px;
+    outline:2px solid #fff;
+    -webkit-border-radius:4px;
+    border: 2px solid #fff;
+}
+
+/*---鼠标点击滚动条显示样式--*/
+::-webkit-scrollbar-thumb:hover{
+    background-color:#8c8c8c;
+    height:50px;
+    -webkit-border-radius:4px;
+}
+
+/*---滚动条大小--*/
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+/*---滚动框背景样式--*/
+::-webkit-scrollbar-track-piece{
+    background-color: transparent;
+    -webkit-border-radius:0;
+}
+
+html,body{
+    font-family: "Microsoft Yahei" !important;
+    overflow-y: auto !important;
+    overflow-x: auto !important;
+}
+ul,ol{
+    list-style-type: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* reset */
+.container, .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+body,div,span,ul,li,h1,h2,h3,h4,p,header,section,footer{margin: 0;}
+
+/* header */
+.account-header {
+    min-height: 60px !important;
+    background-color: #fff;
+    padding-right: 0 !important;
+}
+.account-header .title{
+    font-size: 24px;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 30px 0 30px;
+    color: #42a5f5;
+    font-weight: bold;
+}
+.account-header .title a{
+    color: #42a5f5;
+}
+.account-header .account-info{
+    float: left;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 18px;
+}
+.account-header .account-member{
+    float: right;
+}
+.account-header .account-member .member{
+    float: left;
+    height: 60px;
+    border-right: 1px solid #c8c8c8;
+    margin-right: -1px;
+}
+.account-header .member-msg{
+    display: none;
+}
+.account-header .member-info{
+    padding: 0 16px;
+}
+.account-header .member-info span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 15px 0;
+    line-height: 30px;
+    text-align: center;
+    background-color: #d6d6d6;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 15px;
+}

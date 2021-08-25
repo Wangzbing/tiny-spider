@@ -1,7 +1,7 @@
 package com.tiny.cloud.bookspider.model.entity;
 
 
-import com.tiny.cloud.common.config.BaseEntity;
+import com.tiny.cloud.spider.common.orm.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

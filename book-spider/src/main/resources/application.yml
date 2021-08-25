@@ -3,4 +3,4 @@ spring:
     name: book-spider
 
   profiles:
-    active: dev
+    active: qingcloud

@@ -1,4 +1,4 @@
-package com.tiny.cloud.common.config;
+package com.tiny.cloud.spider.common.orm;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;

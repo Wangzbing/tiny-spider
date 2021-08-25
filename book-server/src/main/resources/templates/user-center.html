@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://www.neat-reader.cn/account/infos -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>账号管理</title>
+    <meta name="keywords" content="epub,epub阅读器,在线epub阅读器,epub怎么打开,怎么打开epub,最好的epub阅读器">
+    <meta name="description" content="Tiny Reader提供体验绝佳的epub阅读体验，无需安装，无需下载，即开即用，可以帮你轻松打开任何epub文件。也许，它就是地球上最好用的epub阅读器！">
+    <!-- Vendor CSS -->
+    <link href="../static/css/fullcalendar.min.css" rel="stylesheet">
+    <link href="../static/css/animate.min.css" rel="stylesheet">
+    <link href="../static/css/sweet-alert.css" rel="stylesheet">
+    <link href="../static/css/material-design-iconic-font.css" rel="stylesheet">
+    <link href="../static/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/app_1.min.css">
+    <link rel="stylesheet" href="../static/css/app_2.min.css">
+    <link rel="stylesheet" href="../static/css/cropper.min.css">
+    <link rel="stylesheet" href="../static/css/avatar.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/account-style.css">
+<body>
+<input type="hidden" class="userId" name="userId" value="366456">
+<input type="hidden" class="start-time" name="startTime" value="1629680871000">
+<input type="hidden" class="next-time" name="nextTime" value="1630112871000">
+<input type="hidden" class="expire-time" name="expireTime" value="1630285671000">
+<input type="hidden" class="membership-trial" name="membershipIsTrial" value="1">
+<header id="header" class="clearfix account-header">
+    <h1 class="title"><a href="https://www.neat-reader.cn/">Tiny Reader</a></h1>
+    <p class="account-info">账号管理</p>
+    <div class="account-member">
+        <div class="member-msg member"></div>
+        <div class="member-info member">
+        </div>
+    </div>
+</header>
+<div class="container clearfix">
+    <div class="container-main">
+        <div class="account-nav">
+            <div class="dropdown-basic-demo clearfix">
+                <ul class="dropdown-menu" role="menu">
+                    <li role="presentation" class="clearfix">
+                        <div class="account-infos clearfix">
+                            <img class="member-head" src="../static/css/132" alt="Amin">
+                            <span class="member-state">
+                                <i class="show-nickname" title="Amin">Amin</i>
+                                <i>会员版 VIP</i>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li role="presentation">
+                        <a class="account_list account_active" role="menuitem" index="0" tabindex="-1" href="javascript:;">账号信息</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li role="presentation">
+                        <a class="account_list" role="menuitem" index="1" tabindex="-1" href="javascript:;">订单信息</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="account-main">
+            <div class="account-main-list show">
+                <div class="card margin-bottom">
+                    <div class="card-header">
+                        <p class="change-type-title">登录方式管理</p>
+                    </div>
+                    <div class="card-body card-padding login-type">
+                        <p class="form-group">
+                            <span class="col-sm-3 control-label">Tiny Reader账号：</span>
+                            <span class="login-account">暂无 <a href="https://www.neat-reader.cn/account/infos#update-login-account" data-toggle="modal" class="btn btn-info waves-effect add-login-account">添加登录账号</a></span>
+                        </p>
+                        <p class="form-group">
+                            <span class="col-sm-3 control-label">三方授权登录账号：</span>
+                            <span class="login-account">微信</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="card margin-bottom">
+                    <div class="card-header">
+                        <p class="change-type-title">修改头像</p>
+                    </div>
+                    <div class="card-body card-padding avatar" data-original-title="" title="">
+                        <div class="avatar-left">
+                            
+                            <img src="../static/css/132" alt="Amin">
+                            
+                        </div>
+                        <div class="avatar-right">
+                            <a class="avatar-upload-btn btn btn-info waves-effect">修改头像</a>
+                            <p class="avatar-upload-tips">支持JPG、PNG、GIF格式，小于2MB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card margin-bottom">
+                    <div class="card-header">
+                        <p class="change-type-title">修改昵称</p>
+                    </div>
+                    <div class="card-body card-padding nickname">
+                        <p class="form-group">
+                            <span class="col-sm-2 control-label">当前昵称：</span>
+                            <span class="nickname-str">Amin</span>
+                        </p>
+                        <div class="form-group">
+                            <label for="newPassword1" class="col-sm-2 control-label">新的昵称</label>
+                            <div class="col-sm-6">
+                                <div class="fg-line">
+                                    <input type="text" class="form-control input-sm" id="newPassword1" placeholder="2到8个字">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <div class="col-sm-12">
+                                <button type="submit" id="update-nickname" class="btn btn-info waves-effect">确认修改</button>
+                                <span class="update-nickname-info">修改成功</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="account-main-list">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="change-type-title">订单信息</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>订单编号</th>
+                                    <th>订单内容</th>
+                                    <th>金额</th>
+                                    <th>创建时间</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody-reocrd" style="text-align: left;">
+                                <tr>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                    <td>--</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改头像弹窗-->
+<div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+           <!-- <form class="avatar-form" action="/account/updateHeaderImg" enctype="multipart/form-data" method="post">-->
+            <div class="avatar-form">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal" type="button">×</button>
+                    <h4 class="modal-title" id="avatar-modal-label">选择图片</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="avatar-body">
+                        <div class="avatar-upload">
+                            <input class="avatar-src" name="avatar_src" type="hidden">
+                            <input class="avatar-data" name="avatar_data" type="hidden">
+                            <label for="avatarInput">图片上传</label>
+                            <input class="avatar-input" id="avatarInput" accept="image/png,image/jpg,image/gif" name="avatar_file" type="file"></div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="avatar-wrapper"></div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="avatar-preview preview-lg"></div>
+                                <div class="avatar-preview preview-md"></div>
+                                <div class="avatar-preview preview-sm"></div>
+                            </div>
+                        </div>
+                        <div class="row avatar-btns">
+                            <div class="col-md-9">
+                                <div class="btn-group">
+                                    <button class="btn waves-effect" data-method="rotate" data-option="-90" type="button" title="Rotate -90 degrees"><i class="fa fa-undo"></i> 向左旋转</button>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn waves-effect" data-method="rotate" data-option="90" type="button" title="Rotate 90 degrees"><i class="fa fa-repeat"></i> 向右旋转</button>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-success btn-block avatar-save waves-effect" type="submit"><i class="fa fa-save"></i> 保存修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--</form>-->
+        </div>
+    </div>
+</div>
+<!--添加绑定网站账号弹窗-->
+<div class="modal fade" id="update-login-account" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bind-user-account">
+            <div class="modal-header">
+                <h4 class="modal-title">添加 Tiny Reader 登录账号</h4>
+                <a href="javascript:;" class="btn btn-link close-account-dialog waves-effect" data-dismiss="modal"><i class="zmdi zmdi-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <p class="add-account-tips">说明：添加账号完成后，除了使用第三方快捷登录，您还可以使用账号和密码进行登录操作。账号创建后无法修改，请使用您的真实邮箱，以免出现不必要的麻烦，比如无法找回密码等</p>
+                <div class="form-group clearfix">
+                    <div class="col-sm-1 account-icon">
+                        <i class="zmdi zmdi-account"></i>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="fg-line">
+                            <input type="text" class="form-control input-sm" id="bind-account-email" placeholder="账号（邮箱地址）">
+                        </div>
+                        <small class="help-block"></small>
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="col-sm-1 account-icon">
+                        <i class="zmdi zmdi-lock-outline"></i>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="fg-line">
+                            <input type="password" class="form-control input-sm" id="bind-account-password" placeholder="密码（最少6位）">
+                        </div>
+                        <small class="help-block"></small>
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="col-sm-1 account-icon">
+                        <i class="zmdi zmdi-lock-outline"></i>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="fg-line">
+                            <input type="password" class="form-control input-sm" id="bind-account-password-again" placeholder="请再次输入密码">
+                        </div>
+                        <small class="help-block"></small>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info waves-effect confirm-submit-bind-account">确定</button>
+                <a href="javascript:;" class="close-account-dialog-btn" data-dismiss="modal">放弃</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+</body></html>

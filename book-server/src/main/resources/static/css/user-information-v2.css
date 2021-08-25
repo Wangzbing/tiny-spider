@@ -1,0 +1,665 @@
+body{
+    background: #f1f1f1;
+}
+.container-pos{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: -webkit-linear-gradient(top, #fefefe,#fbfbfb,#efefef, #e8e8e8);
+    background: linear-gradient(180deg,#fefefe,#fbfbfb, #efefef, #e8e8e8);
+}
+.container-pos .bg-bubbles{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+.bg-bubbles li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #B2EBF2;
+    bottom: -200px;
+    -webkit-animation: square 15s infinite;
+    animation: square 15s infinite;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.bg-bubbles li:nth-child(1) {
+    left: 10%;
+    background-color: #80DEEA;
+}
+
+.bg-bubbles li:nth-child(2) {
+    left: 20%;
+    width: 80px;
+    height: 80px;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    background-color: #B2EBF2;
+}
+
+.bg-bubbles li:nth-child(3) {
+    left: 25%;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    background-color: #E0F7FA;
+}
+
+.bg-bubbles li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation-duration: 13s;
+    animation-duration: 13s;
+    background-color: #B2EBF2;
+}
+
+.bg-bubbles li:nth-child(5) {
+    left: 70%;
+}
+
+.bg-bubbles li:nth-child(6) {
+    left: 80%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    background-color: #B2EBF2;
+}
+
+.bg-bubbles li:nth-child(7) {
+    left: 32%;
+    width: 160px;
+    height: 160px;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+.bg-bubbles li:nth-child(8) {
+    left: 55%;
+    width: 20px;
+    height: 20px;
+    -webkit-animation-delay: 8s;
+    animation-delay: 8s;
+    -webkit-animation-duration: 24s;
+    animation-duration: 24s;
+}
+
+.bg-bubbles li:nth-child(9) {
+    left: 25%;
+    width: 10px;
+    height: 10px;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-duration: 24s;
+    animation-duration: 24s;
+    background-color: #B2EBF2;
+}
+
+.bg-bubbles li:nth-child(10) {
+    left: 90%;
+    width: 160px;
+    height: 160px;
+    -webkit-animation-delay: 9s;
+    animation-delay: 9s;
+}
+
+@-webkit-keyframes square {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-1200px) rotate(600deg);
+        transform: translateY(-1200px) rotate(600deg);
+    }
+}
+
+@keyframes square {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(-1200px) rotate(600deg);
+        transform: translateY(-1200px) rotate(600deg);
+    }
+}
+
+.container-main{
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.container-main .user-login-top{
+    padding: 50px 0 10px;
+    text-align: center;
+}
+.container-main .title{
+    font-size: 52px;
+    color: #42a5f5;
+    line-height: 62px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 10px;
+}
+.container-main .reader-info{
+    font-size: 28px;
+    color: #666;
+    line-height: 42px;
+    margin: 0;
+}
+.container-main .user-login-dialog{
+    margin-top: 38px;
+    padding: 30px 40px;
+    height: 380px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+.container-main .three-party-login{
+    padding-left: 0 !important;
+    width: 226px !important;
+    margin-right: 20px;
+}
+
+.container-main .three-party-login .login-title{
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.container-main .three-party-login .login-list{
+    margin-top: 16px;
+    padding: 0;
+}
+
+.container-main .three-party-login .login-icon-btn{
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    margin-bottom: 36px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    padding-left: 50px;
+    position: relative;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .12);
+    transition: all .4s;
+}
+
+.container-main .three-party-login .qq-login-btn{
+    background-color: #3499dd;
+}
+
+.container-main .three-party-login .wx-login-btn{
+    background-color: #05af10;
+}
+
+.container-main .three-party-login .wb-login-btn{
+    background-color: #f7671d;
+}
+
+.container-main .three-party-login .gg-login-btn{
+    background-color: #db4c44;
+}
+
+.container-main .three-party-login .fb-login-btn{
+    background-color: #4866ab;
+}
+
+.container-main .three-party-login .fb-login-btn a{
+    color: #fff;
+}
+
+.container-main .three-party-login .login-icon-btn:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 44px;
+    line-height: 44px;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.container-main .three-party-login .qq-login-btn:after{
+    content: '使用QQ账号登录';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    padding-left: 50px;
+    color: #fff;
+    z-index: 1;
+}
+
+.container-main .three-party-login .qq-login-btn:before{
+    content: '';
+    background: url(https://www.neat-reader.cn/express/img/quick-start-qq.png) no-repeat 15px 11px;
+    background-size: 46%;
+}
+
+.container-main .three-party-login .wx-login-btn:before{
+    content: '';
+    background: url(https://www.neat-reader.cn/express/img/quick-start-wx.png) no-repeat 15px 11px;
+    background-size: 46%;
+}
+
+.container-main .three-party-login .wb-login-btn:before{
+    content: '';
+    background: url(https://www.neat-reader.cn/express/img/quick-start-gg.png) no-repeat 16px 12px;
+    background-size: 42%;
+}
+
+.container-main .three-party-login .fb-login-btn:before{
+    content: '';
+    background: url(https://www.neat-reader.cn/express/img/quick-start-gg.png) no-repeat 16px 12px;
+    background-size: 40%;
+}
+
+.container-main .three-party-login .gg-login-btn > div{
+    position: relative;
+    opacity: 0;
+    display: block;
+    width: 100% !important;
+    height: 44px !important;
+    z-index: 2;
+}
+
+.container-main .three-party-login .gg-login-btn:before{
+    content: '';
+    background: url(https://www.neat-reader.cn/express/img/quick-start-qq.png) no-repeat 15px 11px;
+    background-size: 46%;
+}
+
+.container-main .three-party-login .gg-login-btn:after{
+    content: 'Google 账号登录';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    padding-left: 50px;
+    color: #fff;
+    z-index: 1;
+}
+
+.container-main .three-party-login .three-party-btn a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.container-main .three-party-login .three-party-btn a img{
+    display: none;
+}
+
+.container-main .three-party-login .three-party-btn div{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.container-main .three-party-login .three-party-link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.container-main .three-party-login .login-list li:hover{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .3);
+    opacity: .8;
+}
+
+.container-main .user-register-wrap{
+    text-align: center;
+    padding-top: 6px;
+}
+
+.container-main .user-register-wrap .user-register{
+    font-size: 12px !important;
+    color: #999 !important;
+    margin-left: 0 !important;
+}
+
+.container-main .local-login{
+    padding-right: 0 !important;
+    padding-left: 20px !important;
+    border-left: 1px solid #cbcbcb;
+}
+
+.container-main .login-dialog-left{
+    float: left;
+    width: 274px;
+    padding: 0 50px 0 6px;
+}
+.container-main .login-dialog-left .login-title{
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    line-height: 20px;
+    font-weight: bold;
+}
+.container-main .login-dialog-left .login-message{
+    padding-top: 20px;
+}
+.container-main .username-icon,
+.container-main .password-icon{
+    float: left;
+}
+.container-main .zmdi {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: 7px;
+    width: 25px;
+    color: #d3d3d3;
+}
+.container-main .login-dialog-left .login-message .username,
+.container-main .login-dialog-left .login-message .password{
+    width: 86%;
+}
+.container-main .username,
+.container-main .password{
+    float: left;
+    width: 93%;
+}
+.container-main .fg-line:not([class*=has-]):after {
+    background: #42a5f5;
+}
+.container-main .form-group{
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.container-main .form-group small{
+    padding-left: 31px;
+    height: 24px;
+    line-height: 24px;
+    clear: both;
+}
+.container-main .login-dialog-left .login-buttons{
+    padding-top: 10px;
+    text-align: center;
+}
+.container-main .login-dialog-left .login-buttons .btn{
+    padding: 4px 82px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    background-color: #42a5f5;
+}
+.container-main .login-dialog-left .is-forget-password{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+}
+
+.container-main .login-dialog-right{
+    float: left;
+    width: 196px;
+    padding-left: 60px;
+}
+.container-main .login-dialog-right .membership-tips{
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+.container-main .login-dialog-right .user-register{
+    display: inline-block;
+    font-size: 14px;
+    color: #1EC3D8;
+    margin-left: 26px;
+}
+.checkbox input:checked+.input-helper:before {
+    background-color: #42a5f5 !important;
+}
+.checkbox input:checked+.input-helper:before,
+.radio input:checked+.input-helper:before {
+    border-color: #42a5f5 !important;
+}
+/* rigister success */
+.container-main .register-success-dialog{
+    width: 500px;
+    height: 300px;
+    margin: 38px auto;
+    background: #fff;
+    padding: 0 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+.container-main .register-success-dialog .success-title{
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    height: 57px;
+    line-height: 57px;
+    border-bottom: 1px solid #e3e3e3;
+    margin: 0;
+}
+.container-main .register-success-dialog .success-main{
+    padding-top: 18px;
+}
+.container-main .register-success-dialog .success-main p{
+    font-size: 16px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+.container-main .register-success-dialog .success-info{
+    color: rgb(255, 152, 0);
+    line-height: 24px;
+    font-weight: bold;
+}
+.container-main .register-success-dialog .success-message{
+    color: rgb(102, 102, 102);
+    line-height: 24px;
+    text-align: left;
+    font-weight: normal;
+}
+.container-main .register-success-dialog .success-main p.success-message:nth-of-type(2){
+    text-indent: -0.5em;
+}
+.container-main .register-success-dialog .success-buttons{
+    padding-top: 12px;
+    text-align: center;
+}
+.container-main .register-success-dialog .success-buttons a{
+    display: inline-block;
+    height: 36px;
+    line-height: 24px;
+}
+
+/* reset password */
+.container-main .reset-password-dialog{
+    width: 500px;
+    margin: 38px auto;
+    background: #fff;
+    padding: 0 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+.container-main .reset-password-dialog .reset-box{
+    padding: 6px 0 30px 0;
+}
+.container-main .reset-password-dialog .reset-title{
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    font-weight: bold;
+    margin: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+.container-main .reset-password-dialog .reset-message{
+    padding-top: 14px;
+}
+.container-main .reset-password-dialog .reset-message .username,
+.container-main .reset-password-dialog .reset-password .password,
+.container-main .reset-password-dialog .reset-password .username{
+    width: 91%;
+}
+.container-main .reset-password-dialog .reset-tips{
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    line-height: 28px;
+    padding-bottom: 14px;
+    margin: 0;
+}
+.container-main .reset-password-dialog .reset-buttons{
+    padding-top: 4px;
+}
+.container-main .reset-password-dialog .reset-buttons a{
+    display: inline-block;
+    margin-right: 20px;
+}
+.container-main .reset-password-dialog .reset-buttons .btn{
+    font-size: 14px;
+    padding: 7px 16px;
+}
+.container-main .reset-password-dialog .result-login-page{
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+}
+.container-main .reset-password-dialog .reset-password{
+    padding: 10px 0;
+    overflow: hidden;
+}
+.container-main .reset-password-dialog .reset-title-code{
+    font-size: 16px;
+    color: #666;
+    font-family: Microsoft Yahei;
+    line-height: 24px;
+    padding-top: 20px;
+    margin-bottom: 18px;
+}
+.container-main .reset-password-dialog .success-title{
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+    margin: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+.container-main .reset-password-dialog .success-main{
+    padding-top: 18px;
+}
+.container-main .reset-password-dialog .success-icon{
+    text-align: center;
+}
+.container-main .reset-password-dialog .success-icon .zmdi{
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    color: rgb(131, 201, 82);
+}
+.container-main .reset-password-dialog .success-message{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+.container-main .reset-password-dialog .success-buttons{
+    padding-top: 10px;
+    text-align: center;
+}
+
+/* 微信显示 */
+.g-login-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1001;
+    margin: -210px 0 0 -180px;
+    width: 360px;
+    height: 420px;
+    border-radius: 10px;
+    background: #fff;
+    display: none;
+}
+.g-login-wrap .dialog-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+}
+.g-login-wrap .login-title {
+    padding: 30px 0 18px;
+}
+.g-login-wrap .logo {
+    width: 60px;
+    height: 70px;
+    margin: 0 auto;
+    font-size: 60px;
+    line-height: 70px;
+    text-align: center;
+    color: #42a5f5;
+    font-weight: bold;
+}
+.g-login-wrap .login-tab {
+    margin-bottom: 17px;
+    padding: 0;
+    text-align: center;
+}
+.g-login-wrap .login-tab li {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 24px;
+}
+.g-login-wrap .login-tab .current {
+    color: #3eb94e;
+    font-weight: bold;
+}
+.g-login-wrap .login-wrap {
+    width: 270px;
+    height: 268px;
+    margin: 0 auto;
+    overflow: hidden;
+    transform: scale(0.88);
+    transform-origin: top center;
+}
+.g-login-wrap .login-wrap .login-inner {
+    margin-top: -68px;
+    margin-left: -15px;
+}
+.g-login-wrap .login-desc {
+    margin-top: -36px;
+    color: #666;
+    text-align: center;
+    font-size: 12px;
+}
+.g-dialog-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: .4;
+    display: none;
+}

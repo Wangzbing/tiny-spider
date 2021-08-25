@@ -1,0 +1,643 @@
+body{
+    overflow-x: hidden !important;
+}
+.container-main{
+    width: 980px;
+    margin: 0 auto 20px;
+}
+.account-nav{
+    float: left;
+    width: 500px;
+}
+.dropdown-basic-demo{
+    display: inline-block;
+    margin: 0 15px 20px 0;
+}
+.card .membership:after{
+    content: "";
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    display: inline-block;
+    visibility: hidden;
+}
+.card .get-membership{
+    overflow: hidden;
+}
+.card .left-card-box{
+    float: left;
+}
+.card .left-card-box p{
+    margin: 0;
+    display: block;
+    float: none;
+    text-align: left;
+}
+.card .left-card-box .member-taste{
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 16px;
+    color: #666;
+}
+.card .left-card-box .membership-valid-time{
+    font-size: 14px;
+    color: #666;
+    line-height: 24px;
+    padding-bottom: 4px;
+}
+.card .left-card-box .membership-next-time{
+    font-size: 14px;
+    color: #666;
+    line-height: 24px;
+}
+.card .right-card-box{
+    float: right;
+    margin-top: 30px;
+}
+.dropdown-basic-demo .dropdown-menu {
+    display: block;
+    position: relative;
+    transform: scale(1);
+    opacity: 1;
+    filter: alpha(opacity=1);
+    z-index: 0;
+    width: 300px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    border-radius: 2px;
+}
+.dropdown-menu>li>a{
+    padding: 20px 30px !important;
+    font-size: 16px;
+}
+.dropdown-menu .divider{
+    margin: 0 !important;
+}
+.account-nav .presentation{
+    padding: 0 30px 10px 30px;
+}
+.account-nav .account-infos{
+    padding: 20px 30px;
+}
+.account-nav .member-head{
+    float: left;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: #d6d6d6;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+.account-nav .member-state{
+    float: left;
+    margin-left: 12px;
+    width: 168px;
+}
+.account-nav .member-state i{
+    display: block;
+    width: 168px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 30px;
+    color: #666;
+    font-style: normal;
+    font-size: 16px;
+}
+.account-nav .account_active{
+    font-weight: bold;
+}
+
+.account-main{
+    margin-left: 320px;
+
+}
+.account-main-list{
+    display: none;
+}
+.account-main .member-taste{
+    float: left;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.account-main .member-taste span{
+    font-weight: bold;
+    margin-right: 10px;
+}
+.account-main .card{
+    text-align: right;
+    margin-bottom: 1px;
+}
+.account-main .member-type{
+    text-align: left;
+}
+.account-main .member-type-left{
+    float: left;
+    width: 118px;
+    font-size: 14px;
+}
+.account-main .member-type-right{
+    margin-left: 118px;
+}
+.account-main .member-type-title{
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 10px !important;
+}
+.account-main .member-list-time{
+    padding-top: 20px;
+}
+.account-main .member-list-time .list-time{
+    margin-bottom: 20px;
+}
+.account-main .member-type-list{
+    padding-top: 6px;
+    padding-left: 0;
+    overflow: hidden;
+}
+.account-main .member-type-list .type-list{
+    float: left;
+    line-height: 28px;
+    width: 241px;
+    padding-bottom: 10px;
+}
+.account-main .member-type-list .type-list i{
+    color: #d2d2d2;
+}
+.account-main .member-type-list .type-list span{
+    margin-left: 10px;
+    color: #b0b0b0;
+}
+.account-main .change-type-title,
+.account-main .member-type-change{
+    text-align: left;
+}
+.account-main .change-type-title{
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.account-main .member-type-change{
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.account-main .type-change-list{
+    width: 186px;
+    margin: 0 10px;
+    border: 1px solid #e3e3e3;
+    float: left;
+    border-radius: 2px;
+    padding: 14px;
+}
+.account-main .change-list-top{
+    border-bottom: 1px solid #e3e3e3;
+    text-align: center;
+}
+.account-main .change-list-top h3{
+    font-size: 16px;
+    margin-top: 0;
+    font-weight: 700;
+}
+.account-main .change-list-top .member-price{
+    font-size: 13px;
+    color: #ff9800;
+    margin-bottom: 12px;
+    padding-top: 4px;
+    font-weight: 700;
+}
+.account-main .change-list-bottom{
+    padding: 30px 0;
+}
+.account-main .list-bottom-powers{
+    padding-left: 0;
+}
+.account-main .list-bottom-powers .powers-list{
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+.account-main .list-bottom-powers .powers-list i{
+    color: #1ec3d8;
+}
+.account-main .list-bottom-powers .powers-list span{
+    margin-left: 8px;
+}
+.account-main .list-bottom-btn{
+    text-align: center;
+    margin-top: 40px;
+}
+.account-main .list-bottom-btn .btn{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.account-main .list-bottom-btn p{
+    margin-bottom: 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.account-main .card-body.login-type{
+    text-align: left;
+}
+.account-main .card-body.login-type .form-group{
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+.account-main .card-body.login-type .login-account{
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+    line-height: 30px;
+}
+.account-main .card-body.login-type .add-login-account{
+    font-style: normal;
+    margin-left: 20px;
+}
+
+.account-main .revise-password{
+    text-align: center;
+}
+.account-main .revise-password label {
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.account-main .revise-password .membership{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.account-main .revise-password .membership .col-sm-12{
+    text-align: left;
+}
+.account-main .revise-password .update-info{
+    display: none;
+    padding-left: 12px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.account-main .tbody-reocrd tr{
+    cursor: pointer;
+}
+
+.account-main .tbody-reocrd .payment{
+    color: #f89406;
+    font-weight: bold;
+}
+.account-main .tbody-reocrd .success{
+    color: #43a047;
+}
+.account-main .tbody-reocrd .close-payment{
+    color: #666;
+}
+
+.account-main .update-success{
+    color: #43a047;
+}
+.account-main .update-error{
+    color: #FF9800;
+}
+
+/* 改版 */
+.account-main .change-type-title .pro-title-orange{
+    color: #ff6600;
+    font-weight: bold;
+}
+.account-main .change-type-title .pro-price{
+    font-size: 14px;
+    color: #666;
+    margin-left: 8px;
+}
+.account-main .change-type-title .price-more{
+    color: #ff6600;
+    font-size: 16px;
+}
+.account-main .member-type-change .member-type-list{
+    width: 600px;
+    margin: 0 auto;
+}
+.account-main .member-type-list .list-li{
+    line-height: 38px;
+    font-size: 18px;
+    float: left;
+    width: 300px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    color: #666;
+}
+.account-main .member-type-list .list-li:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ff6600;
+    border-radius: 9px;
+}
+.account-main .member-type-change .member-type-more{
+    padding: 0 10px;
+    margin-top: 30px;
+    line-height: 24px;
+    height: 24px;
+    color: #999;
+    display: inline-block;
+}
+.account-main .member-type-change .member-type-more .icon-more{
+    font-size: 22px;
+    color: #ff920e;
+    float: left;
+    margin-top: 1px;
+}
+.account-main .member-type-change .member-type-more .more-text{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.account-main .btn-upgrade{
+    position: absolute;
+    right: 42px;
+    top: -35px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+.account-main .btn-upgrade .zmdi-icon{
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: url(../../img/membership/pay-upgrade-icon.png) no-repeat;
+    margin: 0 auto;
+}
+
+/* 修改头像 */
+.account-main .card.margin-bottom{
+    margin-bottom: 20px;
+}
+.account-main .avatar{
+    text-align: left;
+    overflow: hidden;
+}
+.account-main .avatar-left{
+    float: left;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: #cbcbcb;
+}
+.account-main .avatar-left img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.account-main .avatar-right{
+    margin-left: 134px;
+}
+.account-main .avatar-upload-btn{
+    margin-top: 16px;
+    background-color: #42a5f5;
+}
+.account-main .avatar-upload-tips{
+    font-size: 16px;
+    color: #666;
+    line-height: 28px;
+    margin-top: 16px;
+}
+
+.btn-info{
+    background-color: #42a5f5 !important;
+}
+/* 修改昵称 */
+.account-main .nickname{
+    text-align: left;
+}
+.account-main .nickname .form-group{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.account-main .nickname .control-label,
+.account-main .nickname .nickname-str{
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+.account-main .nickname .nickname-str{
+    padding: 0 15px;
+}
+.account-main .nickname .update-nickname-info{
+    display: none;
+    padding-left: 12px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.account-main .full{
+    overflow: inherit !important;
+    height: 30px;
+    margin-top: 20px;
+}
+
+/*有奖推荐*/
+.dropdown-menu>li>a.account_list_tag{
+    position: relative;
+}
+.dropdown-menu>li>a.account_list_tag:before{
+    content: '高额现金奖励';
+    position: absolute;
+    right: 30px;
+    top: 21px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ff5722;
+}
+.dropdown-menu>li>a.account_active:before{
+    font-weight: normal;
+}
+.account-main-list.margin-bottom .card{
+    margin-bottom: 20px;
+    text-align: left;
+}
+.account-main-list.margin-bottom .card-padding{
+    padding-bottom: 10px;
+}
+.account-main-list.margin-bottom .card .card-header{
+    padding-bottom: 16px;
+}
+.account-main .referral-code-title{
+    font-size: 18px;
+}
+.account-main .card-referral{
+    padding: 0 30px;
+}
+.account-main .referral-link{
+    padding: 10px 30px 0;
+}
+.account-main .referral-link span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 16px;
+    color: #666;
+}
+.account-main .referral-link .referral-link-url{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 24px;
+    font-size: 16px;
+    color: #ff6600;
+}
+.account-main .card-referral span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 32px;
+    color: #666;
+}
+.account-main .card-referral .code-color{
+    color: #ff6600;
+    font-weight: bold;
+    font-style: normal;
+}
+.account-main .card-referral .referral-btn{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+    padding: 0 24px;
+    color: #fff;
+    background-color: #ff9800;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    margin-left: 20px;
+}
+.account-main .referral-clear{
+    overflow: hidden;
+}
+.account-main .referral-reward-title{
+    float: left;
+    font-size: 18px;
+    line-height: 32px;
+}
+.account-main .referral-reward-right{
+    float: right;
+}
+.account-main .referral-reward-total{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 32px;
+    color: #666;
+}
+.account-main .referral-reward-total .reward-total-price{
+    font-style: normal;
+    font-size: 16px;
+}
+.account-main .referral-reward-button{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+    color: #fff;
+    background-color: #cccccc;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    padding: 0 28px;
+    margin-left: 20px;
+    cursor: not-allowed;
+}
+.account-main .referral-reward-button.active{
+    background-color: #ff9800;
+    cursor: pointer;
+}
+.account-main .card .referral-table{
+    margin-top: 30px;
+}
+
+.account-main .referral-info{
+    margin: 20px 30px 0 30px;
+    padding: 10px 0;
+    border-top: 1px solid #dcdcdc;
+}
+.account-main .referral-info .referral-info-title{
+    font-size: 16px;
+    line-height: 36px;
+    padding: 24px 0 6px;
+    color: #666;
+}
+.account-main .referral-info .referral-info-text{
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 14px;
+}
+.account-main .referral-info .referral-info-btn{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 32px;
+    color: #0099FF;
+}
+
+
+/*绑定网站账号弹窗样式*/
+.bind-user-account .modal-header{
+    padding: 0 40px;
+    height: 56px;
+    position: relative;
+}
+.bind-user-account .modal-header .modal-title{
+    font-size: 18px;
+    line-height: 56px;
+    border-bottom: 1px solid #efefef;
+}
+.bind-user-account .modal-header .close-account-dialog{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 40px;
+    top: 18px;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    padding: 0;
+}
+.bind-user-account .modal-body{
+    padding: 0 40px 10px;
+}
+.bind-user-account .modal-body .add-account-tips{
+    font-size: 16px;
+    color: #ff780b;
+    line-height: 20px;
+    margin: 16px 0 20px;
+}
+.bind-user-account .modal-body .account-icon{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+}
+.bind-user-account .modal-body .help-block{
+    height: 17px;
+}
+.bind-user-account .modal-body .form-group{
+    margin-bottom: 10px;
+}
+.bind-user-account .modal-body .account-icon .zmdi{
+    font-size: 24px;
+    color: #d3d4d3;
+}
+.bind-user-account .modal-footer{
+    text-align: left;
+    padding: 0 40px 30px;
+}
+.bind-user-account .modal-footer .confirm-submit-bind-account{
+    padding: 6px 60px;
+    font-size: 14px;
+}
+.bind-user-account .modal-footer .close-account-dialog-btn{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: 32px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #a2b0bb;
+}

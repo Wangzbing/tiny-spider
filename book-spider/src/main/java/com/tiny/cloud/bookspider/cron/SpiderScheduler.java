@@ -18,12 +18,14 @@ public class SpiderScheduler {
     @Resource
     SpiderContext spiderContext;
 
+
+    @Scheduled(initialDelay = 1L,fixedRate = 86400000L)
     public void saveInfo(){
         SpiderService service = (SpiderService) spiderContext.getService(SpiderStore.QI_DIAN);
         service.saveInfo();
     }
 
-    @Scheduled(initialDelay = 2L,fixedRate = 86400000L)
+    @Scheduled(initialDelay = 3600000L,fixedRate = 10800000L)
     public void saveContent(){
         SpiderService service = (SpiderService) spiderContext.getService(SpiderStore.QI_DIAN);
         service.saveContent();

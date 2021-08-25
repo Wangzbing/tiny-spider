@@ -35,13 +35,15 @@ spring:
     static-path-pattern: /static/**
     resources:
       static-locations: classpath:/static/
+  jpa:
+    show-sql: true
+    # 配置方言
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: update
   thymeleaf:
     cache: false
     mode: LEGACYHTML5
-
-# MyBatis
-mybatis:
-  configuration:
-    # 打印日志
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  type-aliases-package: com.tiny.cloud.service.book
+tiny:
+  security:
+    enable: true
