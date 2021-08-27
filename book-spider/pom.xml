@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>book-spider</artifactId>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <dependencies>

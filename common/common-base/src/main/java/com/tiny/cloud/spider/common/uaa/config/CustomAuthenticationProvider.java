@@ -2,6 +2,7 @@ package com.tiny.cloud.spider.common.uaa.config;
 
 import com.github.benmanes.caffeine.cache.Cache;
 import com.tiny.cloud.spider.common.uaa.service.impl.UserAuthService;
+import com.tiny.cloud.spider.common.uaa.vos.AccountVO;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
@@ -56,8 +57,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider, Ini
             throw new BadCredentialsException("用户名密码不正确，请重新登陆！");
         }
         String jwt = jwtToken.generateToken(principal.getUsername());
+        AccountVO accountByName = userAuthService.getAccountByName(principal.getUsername());
         // 重新刷新登录时间
         principal.setToken(jwt);
+        principal.setUserId(accountByName.getUserId());
         return getAuth(password, principal);
     }
 

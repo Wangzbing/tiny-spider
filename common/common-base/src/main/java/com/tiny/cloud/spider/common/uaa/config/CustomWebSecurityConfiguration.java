@@ -83,11 +83,6 @@ public class CustomWebSecurityConfiguration  extends WebSecurityConfigurerAdapte
         http.headers().disable();
         http.logout().logoutUrl("/logout").addLogoutHandler((httpServletRequest, httpServletResponse, authentication) -> {
             httpServletRequest.getSession().removeAttribute("auth");
-            try {
-                httpServletResponse.sendRedirect("/");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }).invalidateHttpSession(true).deleteCookies("token");
     }
 

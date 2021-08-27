@@ -257,7 +257,7 @@
   <meta name="renderer" content="webkit">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="shortcut icon" href="../static/imgs/favicon.ico">
-  <title>七根凶简+番外 作者：尾鱼(1)</title>
+  <title th:text="${book.getBookName()}"></title>
   <style>.css-normalize {
     margin: 0;
     padding: 0;
@@ -708,14 +708,20 @@
                   d="M 28 16 C 28 22.628906 22.628906 28 16 28 C 9.371094 28 4 22.628906 4 16 C 4 9.371094 9.371094 4 16 4 C 22.628906 4 28 9.371094 28 16 Z "
                   style="fill: none; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: miter; stroke: rgb(0, 0, 0); stroke-opacity: 1; stroke-miterlimit: 10;"></path></svg></span>
           </div>
-          <div class="nav-list"><span class="arrow left"><svg class="MuiSvgIcon-root arrow-svg-icon"
+          <div class="nav-list">
+            <span class="arrow left"><svg class="MuiSvgIcon-root arrow-svg-icon"
                                                               focusable="false" viewBox="0 0 24 24"
                                                               aria-hidden="true"><path
                   d="M 19.75 27 L 8.75 16 L 19.75 5 " transform="matrix(0.75,0,0,0.75,0,0)"
                   style="fill: none; stroke-width: 2; stroke-linecap: butt; stroke-linejoin: miter; stroke: rgb(0, 0, 0); stroke-opacity: 1; stroke-miterlimit: 10;"></path></svg></span>
             <div class="page-num">
-              <div class="page-left"><input type="text" value="3"></div>
-              <div class="page-right"><span>/</span><span>199</span></div>
+              <div class="page-left">
+                <input type="text" value="1" class="pageChangeN" onchange="pageChange()">
+              </div>
+              <div class="page-right">
+                <span>/</span>
+                <span th:text="${chapters.size()}">199</span>
+              </div>
             </div>
             <span class="arrow right"><svg class="MuiSvgIcon-root arrow-svg-icon" focusable="false"
                                            viewBox="0 0 24 24" aria-hidden="true"><path
@@ -819,8 +825,8 @@
       <div class="catalog-container">
         <div class="book-catalog-panel">
           <div class="book-catalog" style="background-color: rgb(248, 248, 250); color: rgb(51, 51, 51);" >
-            <div data-height="49" data-pagenum="1" data-index="0" data-parent="content-parent" data-child="0" class="nav-level-1 toc-item open content-parent" data-href="/chapter1" data-label="第1章 引子" data-depth="1" >
-              <span data-height="49" th:id="${chapter.id}" class="text" title="第1章 引子" style="border-color: rgba(51, 51, 51, 0.1);" th:text="${chapter.name}" th:each="chapter:${chapters}"></span>
+            <div data-height="49" data-pagenum="1" data-index="0" data-parent="content-parent" data-child="0" class="nav-level-1 toc-item open content-parent" data-depth="1" >
+              <span data-height="49" th:id="${chapter.id}" class="text"  style="border-color: rgba(51, 51, 51, 0.1);" th:text="${chapter.name}" th:each="chapter:${chapters}"></span>
             </div>
           </div>
           <div class="close-catalog hide">
@@ -853,92 +859,13 @@
                 <section id="nr_spineIndex_2" class="nr_spine_section" spineidref="chapter3"
                          spineindex="2" spinehref="/chapter3"><span class="nr_spine_divider_start"
                                                                     spineindex="2"></span>
-                  <div role="Spine Doc Body" class="realContent">
-                    <h1>第3章</h1>
-                    <p>来的是霍子红，脸上挂着常年的倦容，鼻子下沿两道深深的法令，虽然显老，但从眉眼来看，年轻时长的委实是不差的。</p>
-                    <p>
-                      她身体不好，隔三岔五的生病，这两天感冒，咳嗽总止不住，她从楼梯顶上探出头来，哪怕有些不悦，声音也是温温柔柔：“木代，到我房间里来一下。还有啊，不要老欺负……一万三。”</p>
-                    <p>她其实是想叫他名字，但是一时间竟然想不起来：“都是你，给他取这么个外号，搞得我也想不起他叫什么了。”</p>
-                    <p>
-                      木代绕过一万三往楼上走，木质的楼梯板吱吱呀呀的，一万三听到她远远传来的声音：“那也没错啊，他是欠了你一万三千块钱，卖身一年打工抵债，别说我没欺负他，就算真的欺负一个奴隶，也不犯法啊。”</p>
-                    <p>一万三悻悻从楼梯上爬起来，心里骂着：你才奴隶，你全家都奴隶。</p>
-                    <p>回到吧台，客人已经走的差不多了，张叔佝偻着身子挨桌扫地，一万三在电脑上登记完最近的酒水进出库存，四下瞅瞅没别人，赶紧点开了天涯网页。</p>
-                    <p>
-                      他几周前发了个帖子，名字叫《八一八我那极品的老板娘》，在这个贴子里，他的老板娘代号森林，身高一米五出头，体重约一百五十斤，种种苛刻员工的行为，周扒皮再世都要自叹不如。</p>
-                    <p>虽然不算热帖，点击和回复也相当可观了。</p>
-                    <p>
-                      一万三更新了一下，“如实”记录了今天发生的事，大意是他在酒吧洗杯子的时候，失手砸了一个，森林老板娘上来就给了他一脚，他义愤填膺，吼了句：“难道打工的人就没有尊严吗？”</p>
-                    <p>但是森林冷笑了一下，脸上横ròu迭起：“吃我的住我的，你就是我们家的奴隶！”</p>
-                    <p>很快就有人回复了。</p>
-                    <p>——楼主的老板娘是有病吧？</p>
-                    <p>——楼主吼的好，就应该再扇上一耳光。</p>
-                    <p>——楼主闪人吧，从之前的描述来看，楼主能力很qiáng的，到哪都能找到工作。</p>
-                    <p>……</p>
-                    <p>读着这么多热心人的回复和建议，一万三的心情渐渐复苏，他哼着小曲儿整理吧台，顿了顿又去刷新回复，看到其中一条的时候，心里忽然咯噔了一声。</p>
-                    <p>——楼主的想象力很丰富，不去写小说真是可惜了。睡醒了吗？杯子还没洗完吧。</p>
-                    <p>ID名称是“欠债还钱，天经地义”，点进去一看，注册时间距离他发帖时间没多久。</p>
-                    <p>一万三后背凉意冒起，半晌抬起头看天花板，酒吧的二层是住人的，正顶上是霍子红的房间，木代现在应该就在房里。</p>
-                    <p>回帖的不会是……她吧？</p>
-                    <p>房间里，霍子红正咳嗽的厉害，木代帮她倒了半杯止咳糖浆：“身体不好就别乱走呗，不好好休息，倒有jīng神去维护小人。”</p>
-                    <p>霍子红喝了一口，抚着胸口顺了顺气：“木代，不要老针对一万三。”</p>
-                    <p>木代拖了把椅子，倒转着骑坐了，纠正霍子红：“我没针对他，他本来就是个骗子，当初你就该让那个浙江老板把他送到派出所的。”</p>
-                    <p>当初？</p>
-                    <p>当初那件事，还得从那个浙江老板说起。</p>
-                    <p>
-                      大概两年多以前，那个浙江老板和几个朋友自驾川藏线，在康定附近的折多山停车休息，他年过五十，体重也横向发展，高海拔地区走几步就喘不上气，坐在地上休息的时候，无意间往来路一瞅，视线里出现了一万三那“惊艳”的身影。</p>
-                    <p>据说当时，一万三头戴骑行的头盔，一身紧身劲装，蹬一辆单车，车后头是几十斤重的驮包，神情凝重，眼神坚毅。</p>
-                    <p>老板惊讶极了，在他走两步都气喘的地方，一万三负重蹬车骑上坡道，这是怎样的一种jīng神啊。</p>
-                    <p>他赶紧招呼一万三：“小伙子，下来休息一下呗。”</p>
-                    <p>再一聊，老板深深地震撼了！</p>
-                    <p>
-                      一万三说，他的梦想就是单车环游世界，目前，他已经骑完中国二十多个省份了，他还抖出一面旗子给老板看，上面密密麻麻的签名，很多是来中国旅游的国际友人签的，都是洋文，一万三还自豪地指着一个鬼画符一样的签名告诉他，那是比利时驻华大使签的。</p>
-                    <p>接着又阐述了自己接下来的打算，骑进西藏，顶礼珠穆朗玛，然后从西藏出境，骑到尼泊尔、巴基斯坦、印度，如果可能的话，还要骑到欧洲大陆。</p>
-                    <p>一边说着，一边拿出一个硬邦邦的馒头，掰了一小半，夹了两根咸菜，嚼巴嚼巴吃了，又珍而重之的把馒头用塑料袋裹了放回包里。</p>
-                    <p>老板劝他多吃点，一问之下才知道，剩下的那点馒头还要分两顿吃。</p>
-                    <p>
-                      浙江老板的青年岁月在jīng神文化贫瘠的年代度过，待到有钱去实现一些任性的理想的时候，已然心有余而力不足，很容易盲目地在后辈身上看到自己的影子，所以当即起了资助一万三的念头，身上现金不是很多，又朝同车的朋友融了点资，总计一万三千块。</p>
-                    <p>一万三很感动，请他在旗子上签名，还跟他说：“我会带着有你签名的旗子在世界各地留影的！”</p>
-                    <p>要不是折多山上没提款机，老板估计还会冲动地再提一两万给他。</p>
-                    <p>事情本来就该这么结束了，谁知道一年多之后，在聚散随缘酒吧，两个人又宿命般的相遇了。</p>
-                    <p>
-                      当时一万三改了装束，扎着花头巾，白衬衫，穿破dòng的牛仔裤，跟当年风尘仆仆晒的跟个茄子的形象不可同日而语，老板本来也没认出他来的，是一万三自己泄了底。</p>
-                    <p>
-                      他跟几个路上初相见的狐朋狗友高谈阔论：“现在很多大老板喜欢自驾川藏、登山，显得bī格很高。我总结，这帮人，七个字，钱多人傻年纪大。人不缺钱，缅怀青chūn，这个时候你就得找准卖点，卖理想卖情怀激起共鸣。我告诉你们，我有段时间蹲守川藏线，看见这种内地牌照的自驾车就过去，那些人客气啊，给我大把吃的喝的，什么脉动红牛，我后来光卖饮料赚了小八百。也有傻的，印象最深的一个，我靠，给了我足足一万三千块钱！”</p>
-                    <p>那个浙江老板坐后头那桌，开始当八卦听的，越听越不对劲，听到最后一句，气的嗷一声直接撑住桌子就扑过来了，五十多的人了，愣是展现出了青年人的敏捷身手。</p>
-                    <p>……</p>
-                    <p>木代盯着霍子红看：“红姨，好心也得因人而异，一万三就该被送去坐牢的，你居然还为他花钱。”</p>
-                    <p>霍子红笑笑：“也不是白花，一万三千块，他要在酒吧打工一年，折下来也挺合算。”</p>
-                    <p>木代下巴抵在椅子靠背顶上：“爱心泛滥不说，还引láng入室。”</p>
-                    <p>“不要先入为主，这些日子，一万三gān的挺好的。”</p>
-                    <p>木代嗤之以鼻：“我敢用我的头担保，他一定动手脚，不是在账上，就是在货上。”</p>
-                    <p>“人都会改过的，不能一棍子打死。木代，你性格就是这点不好，太拧。”</p>
-                    <p>木代不说话了，过了会，她情绪忽然收了起来：“随便吧，你喜欢就行。我其实就是个被收养的，跟你说话不该这么冲，我下次改。”</p>
-                    <p>霍子红愣了一下，心里长长叹了口气，她递了张纸条给木代：“木代，帮我去一趟这个地方，方便的话，明天就出发。”</p>
-                    <p>“嗯。”</p>
-                    <p>短暂的静默之后，木代说了句：“那我先回房了，还得收拾行李。”</p>
-                    <p>木代就是这个脾气，平时，她一定会问，为什么去，找这个人gān什么，有什么吩咐没有，但是情绪低落的时候，她只会回一个字：“嗯。”</p>
-                    <p>
-                      霍子红走到门边，出神地看木代的身影消失在楼梯下头，张叔拎着扫帚和簸箕上来例行打扫，扫到霍子红门口时，霍子红说了句：“有时候，我挺担心木代这孩子的，她跟谁都不亲近。”</p>
-                    <p>
-                      张叔扫的吭哧吭哧的，也没抬头：“正常，木代被领养的时候，都三四岁了，在那种地方，是吃过苦的。我印象最深的，是她吃桃子过敏，刚到你身边，你递个桃给她，她赶紧接了，大口地咬。”</p>
-                    <p>霍子红轻声接了句：“可不么，头半年，每次吃饭，她都不敢夹ròu。我说哪个菜好吃，她就不吃哪个，小毛头孩子，就压了那么多心思了。”</p>
-                    <p>说到末了，忽然有点伤感：“如果没有八年前那件事，木代现在也许会好很多。”</p>
-                    <p>张叔直起身子，右手握拳捶了捶腰心：“其实我们小老板娘，现在已经很好了。真的，你去看看那些新闻上报道的，小老板娘这样的，算恢复的很好了。”</p>
-                    <p>楼梯上传来熟悉的脚步声，一万三头皮一颤，以迅雷不及掩耳之势关了网页。</p>
-                    <p>木代沉着脸过来，本来想直接忽略他的，想了想还是在吧台边停下，说了句：“我明天要去趟重庆。”</p>
-                    <p>“真的？”</p>
-                    <p>一万三喜形于色的同时意识到自己的欢快太明显了，他的声音立刻低沉下来，神情也随之换成了失望：“不是吧，又要有好几天见不到你了。”</p>
-                    <p>其实他想说的是：去吧去吧别回来了。</p>
-                    <p>木代笑了笑，笑的一万三浑身不自在，他读懂那里头的含义，让他老实点。</p>
-                    <p>一万三很是心虚地瞥了瞥酒架上那两瓶酒。</p>
-                    <p>
-                      回房的时候，一万三从木代的卧室门口经过，透过半开的门，看到地上一个摊开的行李箱，一半五颜六色，猫猫头的洗漱包，大象头的打底T恤，带流苏的短靴，铃铛贝壳的手链，而另一半，所有衣物装饰，全是黑的。</p>
-                    <p>一万三在心里说：这个毒妇，就是个jīng分。</p></div>
+                  <div role="Spine Doc Body" class="realContent" th:utext="${content}">
+                  </div>
                   <span class="nr_spine_divider_end" spineindex="2"></span></section>
               </div>
               <div class="view-next-btn">
-                <p id="prev-btn" class="is-prev" data-tag="prev">上一章节</p>
-                <p id="next-btn" class="is-next" data-tag="next">下一章节</p>
+                <p id="prev-btn" class="is-prev uu-btn" data-tag="prev">上一章节</p>
+                <p id="next-btn " th:id="${next}" class="is-next uu-btn" data-tag="next">下一章节</p>
               </div>
             </div>
           </div>
@@ -951,5 +878,5 @@
 </div>
 </body>
 <script src="../static/js/jquery.js" type="application/javascript"></script>
-<script src="../static/js/main.js" type="application/javascript"></script>
+<script src="../static/js/main.js" type="application/javascript" th:inline="javascript"></script>
 </html>

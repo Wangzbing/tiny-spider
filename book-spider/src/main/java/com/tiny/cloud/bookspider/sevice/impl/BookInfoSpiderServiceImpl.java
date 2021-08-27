@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author wangzb
@@ -52,8 +53,7 @@ public class BookInfoSpiderServiceImpl implements SpiderService {
 
     @Override
     public void saveContent(){
-        List<BookInfo> all = repository.findAll();
-        all.forEach(s->{
+        repository.findAll().parallelStream().forEach(s->{
             ContentEvent contentEvent = new ContentEvent(s);
             publisher.publishEvent(contentEvent);
         });

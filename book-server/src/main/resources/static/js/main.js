@@ -1,4 +1,5 @@
 $(".icon.catalog-icon").click(function () {
+
     let cas = $(".catalog-container");
     if (cas.hasClass("catalog-open-left")) {
         cas.removeClass("catalog-open-left")
@@ -27,14 +28,60 @@ $color.delegate('li', 'click', function() {
 });
 
 let allContents = $(".content-parent");
+
 allContents.delegate('span', 'click', function() {
-    let j = $(this).attr("id");
-    console.log(j);
+    removeActive();
+    let $1 = $(this);
+    let j = $1.attr("id");
     $.get("/content?id="+j,function(result){
-        $(".realContent").html(result);
+        $1.addClass("active");
+        $(".realContent").html(result.content);
+        preOrNext(result.preId,result.nextId)
     });
 });
 
+
+function removeActive(){
+    $("div span").each(function () {
+        $(this).removeClass("active");
+    })
+}
+
+$(".uu-btn").click(function (){
+    removeActive();
+    let j = $(this).attr("id");
+    $.get("/content?id="+j,function(result){
+        $(".realContent").html(result.content);
+        preOrNext(result.preId,result.nextId);
+        let $1 = $("#" + j);
+        $1.addClass("active")
+    });
+})
+
+function pageChange(){
+    let attr = $(".pageChangeN").val();
+    let number = parseInt(attr,10)-1;
+    let find = $(".content-parent").find("span");
+    if (find&&find.length>=number){
+        removeActive();
+        let id = find[number].id;
+        console.log(id);
+        $.get("/content?id="+id,function(result){
+            $(".realContent").html(result.content);
+            preOrNext(result.preId,result.nextId);
+            $(find[number]).addClass("active")
+        });
+    }
+}
+
+function preOrNext(pre, next) {
+    if (pre){
+        $(".is-prev").attr('id',pre);
+    }
+    if (next){
+        $(".is-next").attr('id',next);
+    }
+}
 const r = [{
         bgColor: "rgb(238,238,244)",
         tocBgColor: "rgb(248,248,250)",

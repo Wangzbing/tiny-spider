@@ -46,7 +46,7 @@ public class CustomAuthenticationFilter  extends AbstractAuthenticationProcessin
         String id = request.getSession().getId();
         String name = obtainName(request);
         String password = obtainPassword(request);
-        LoginFormVO loginFormVO = new LoginFormVO(null,name);
+        LoginFormVO loginFormVO = new LoginFormVO(null,name,null);
         CustomAuthenticationToken authRequest = new CustomAuthenticationToken(password, loginFormVO);
         // Allow subclasses to set the "details" property
         authRequest.setDetails(id);

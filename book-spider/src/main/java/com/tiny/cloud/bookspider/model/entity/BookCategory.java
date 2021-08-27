@@ -18,4 +18,6 @@ public class BookCategory{
   private String cateName;
   private String cateUrl;
   private Long parentCateId;
+  private String parentUrl;
+  private Long parentId;
 }

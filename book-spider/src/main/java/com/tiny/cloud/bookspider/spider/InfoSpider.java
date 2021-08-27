@@ -31,7 +31,7 @@ public class InfoSpider extends BaseSpider<SpiderBO> implements PageProcessor {
     @Resource
     ChapterSpider chapterSpider;
 
-    private final Site site = Site.me().setRetryTimes(1).setSleepTime(1000).setCharset("UTF-8");
+    private final Site site = Site.me().setRetryTimes(1).setSleepTime(10).setTimeOut(200000).setCharset("UTF-8");
 
     private static final String HOST="https://www.yanqingshu.com";
 
@@ -46,7 +46,7 @@ public class InfoSpider extends BaseSpider<SpiderBO> implements PageProcessor {
             String text = element.getElementsByClass("bookname").select("a").text();
             if (text.equals(getKeys().getUrl())){
                 chapterSpider.setKeys(getKeys());
-                Spider.create(chapterSpider).addUrl(HOST+attr).run();
+                Spider.create(chapterSpider).addUrl(HOST+attr).thread(5).run();
             }
         }
     }

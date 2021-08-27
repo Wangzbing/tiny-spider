@@ -32,7 +32,7 @@ public class ContentSpider extends BaseSpider<SpiderBO> implements PageProcessor
     @Resource
     IDGenerator generator;
 
-    private final Site site = Site.me().setRetryTimes(1).setSleepTime(1000).setCharset("UTF-8");
+    private final Site site = Site.me().setRetryTimes(1).setSleepTime(10).setTimeOut(200000).setCharset("UTF-8");
     @Override
     public void process(Page page) {
         Html html = page.getHtml();

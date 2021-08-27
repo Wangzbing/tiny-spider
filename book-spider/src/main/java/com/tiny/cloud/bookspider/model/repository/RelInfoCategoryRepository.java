@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @description 内容详情关联
  */
 public interface RelInfoCategoryRepository extends JpaRepository<RelInfoCategory,Long> {
+    RelInfoCategory findByBookIdAndCateId(long book, Long aLong);
+
 }

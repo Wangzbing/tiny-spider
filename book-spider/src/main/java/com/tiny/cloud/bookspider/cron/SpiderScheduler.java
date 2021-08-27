@@ -25,7 +25,7 @@ public class SpiderScheduler {
         service.saveInfo();
     }
 
-    @Scheduled(initialDelay = 3600000L,fixedRate = 10800000L)
+    @Scheduled(initialDelay = 60000L,fixedRate = 10800000L)
     public void saveContent(){
         SpiderService service = (SpiderService) spiderContext.getService(SpiderStore.QI_DIAN);
         service.saveContent();

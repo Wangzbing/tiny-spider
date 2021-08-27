@@ -5466,7 +5466,7 @@ video::-webkit-media-text-track-display {
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, .1)
 }
 
-#content-doc-frame, #reflowable-book-frame, #scaler, #scrolled-content-frame, .container, .iframe-fixed {
+#content-doc-frame, #reflowable-book-frame, #scaler, #scrolled-content-frame, .iframe-fixed {
     height: 100%;
     width: 100%
 }
@@ -8975,7 +8975,6 @@ a {
     bottom: 0;
     left: 0;
     background-color: #f2f2f2;
-    min-width: 1000px
 }
 
 /*!

@@ -17,9 +17,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.Html;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -36,7 +34,7 @@ public  class ChapterSpider extends BaseSpider<SpiderBO> implements PageProcesso
     @Resource
     BookChapterRepository chapterRepository;
 
-    private final Site site = Site.me().setRetryTimes(1).setSleepTime(1000).setCharset("UTF-8");
+    private final Site site = Site.me().setRetryTimes(1).setSleepTime(10).setTimeOut(20000).setCharset("UTF-8");
 
     @Override
     public void process(Page page) {
@@ -63,16 +61,18 @@ public  class ChapterSpider extends BaseSpider<SpiderBO> implements PageProcesso
                 urls.put(atomicInteger.incrementAndGet(),href+ StringPool.SPLITTER+text);
             }
         });
-        urls.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(s-> {
+        List<Map.Entry<Integer, String>> toSort = new ArrayList<>(urls.entrySet());
+        toSort.sort(Map.Entry.comparingByKey());
+        for (Map.Entry<Integer, String> s : toSort) {
             String[] split = s.getValue().split(StringPool.SPLITTER);
             getKeys().setOrder(s.getKey().longValue());
             getKeys().setUrl(split[1]);
             Optional<BookChapter> byOption = chapterRepository.findByOption(getKeys().getId(), s.getKey().longValue());
-            if (!byOption.isPresent()){
+            if (!byOption.isPresent()) {
                 contentSpider.setKeys(getKeys());
-                Spider.create(contentSpider).addUrl(page.getUrl()+split[0]).run();
+                Spider.create(contentSpider).addUrl(page.getUrl() + split[0]).thread(5).run();
             }
-        });
+        }
     }
 
     @Override

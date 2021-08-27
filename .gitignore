@@ -16,5 +16,6 @@ buildNumber.properties
 
 
 /.idea/**
+.idea/**
 **/*.log
 

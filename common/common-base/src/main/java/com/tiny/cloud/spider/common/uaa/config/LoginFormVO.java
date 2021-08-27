@@ -13,4 +13,5 @@ import lombok.Data;
 public class LoginFormVO {
     private String token;
     private String username;
+    private Long userId;
 }

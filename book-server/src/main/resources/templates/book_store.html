@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="../static/css/common.css">
     <link rel="stylesheet" href="../static/css/account-style.css">
     <link rel="stylesheet" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" href="../static/js/jquery.min.js">
-    <link rel="stylesheet" href="../static/js/bootstrap.min.js">
     <!-- 引入tool中的icon -->
     <link rel="stylesheet" href="../static/font/iconfont.css">
     <!-- 引入常规样式 -->
@@ -28,49 +26,83 @@
     <link rel="stylesheet" href="../static/css/footer.css">
     <!-- 引入背景色 -->
     <link rel="stylesheet" href="../static/css/li-bgc-color.css">
+    <link href="../static/css/main.css" rel="stylesheet">
 <body>
-<input type="hidden" class="userId" name="userId" value="366456">
-<input type="hidden" class="start-time" name="startTime" value="1629680871000">
-<input type="hidden" class="next-time" name="nextTime" value="1630112871000">
-<input type="hidden" class="expire-time" name="expireTime" value="1630285671000">
-<input type="hidden" class="membership-trial" name="membershipIsTrial" value="1">
-<header id="header" class="clearfix account-header">
-    <h1 class="title"><a href="https://www.neat-reader.cn/">Tiny Reader</a></h1>
-</header>
-    <div class="container">
-        <h2 class="page-header">
-            <div class="row">
-                <div class="col-xs-3">小说</div>
-                <div class="col-xs-4 text-right pull-right"><a href="#">首页</a></div>
+<div class="book-shelf-container css-normalize noselect">
+    <header class="shelf-header">
+        <div class="header-left"><h1 class="logo"><a href="#" class="logo-link">Tiny Reader</a></h1></div>
+        <div class="header-right">
+            <div class="right-login-wrap">
+            <span class="user-head-avatar">
+                <img class="head-avatar" th:src="@{../static/imgs/1.jpg}" alt="user">
+            </span>
+                <ul class="login-info-wrap isLogout hide">
+                    <li class="info-item">
+                        <svg class="MuiSvgIcon-root svg-icon-account" focusable="false" viewBox="0 0 24 24"
+                             aria-hidden="true">
+                            <path d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"></path>
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                        </svg>
+                        <span class="info-item-text">账号管理</span></li>
+                    <li class="info-item item-bottom-border">
+                        <a th:herf="@{/}"></a>
+                        <svg class="MuiSvgIcon-root svg-icon-message" focusable="false" viewBox="0 0 1024 1024"
+                             aria-hidden="true">
+                            <path d="M870.501 153.462v53.752L153.019 366.639v-33.807H63.333v358.741h89.685v-33.784l44.843 9.959v158.354c0 20.583 14.013 38.515 33.982 43.528l179.371 44.843a44.967 44.967 0 0 0 10.861 1.315c13.924 0 27.282-6.457 35.865-17.933l110.748-147.689 301.813 67.049v53.73h89.685V153.462h-89.685zM404.03 820.232l-116.483-29.143V687.677l185.061 41.121-68.578 91.434zM153.019 565.916V458.512l717.482-159.464V725.38L153.019 565.916z"></path>
+                        </svg>
+                        <span class="info-item-text">书架</span></li>
+                    <li class="info-item">
+                        <a class="logout-link" href="#" >
+                        <svg class="MuiSvgIcon-root svg-icon-logout" focusable="false" viewBox="0 0 1024 1024"
+                             aria-hidden="true">
+                            <path d="M812.243667 1020.412288l-666.847717 0c-33.855062 0-61.398372-27.54331-61.398372-61.398372L83.997578 65.491597c0-33.855062 27.54331-61.398372 61.398372-61.398372l666.847717 0c33.855062 0 61.398372 27.54331 61.398372 61.398372l0 180.888813-61.398372 0L812.243667 65.503876c-0.00307 0.029676-0.058328-0.021489-0.090051-0.037862l-666.757666 0.024559c0.042979 0.005117-0.008186 0.058328-0.024559 0.090051l0.024559 893.432269c0.00307-0.079818 0.057305 0.008186 0.090051 0.023536l666.757666-0.023536c-0.042979-0.005117 0.008186-0.058328 0.023536-0.090051l-0.023536-139.001821 61.398372 0 0 139.091872C873.642039 992.868979 846.098729 1020.412288 812.243667 1020.412288z"></path>
+                            <path d="M954.895621 592.732719 784.793478 422.0125l-0.019443 0.01842-28.595268-28.698622-32.086789-32.124651c-5.231141-5.234211-12.186554-8.113795-19.599384-8.113795-7.453762 0-14.479783 2.910283-19.774369 8.204869-10.05603 10.037611-11.031241 25.799596-2.360767 36.85028l49.272193 49.454342 0.01228-0.016373L870.07991 586.525344 321.376986 586.525344c-15.311731 0-27.770484 12.518105-27.770484 27.918863 0 15.394618 12.458753 27.912723 27.770484 27.912723L870.07991 642.35693 744.438375 768.458953l-7.969509 7.831362-58.655911 58.873876c-5.79089 11.514241-3.994987 24.808012 4.653997 33.463136 5.15337 5.158487 12.143575 8.009418 19.676132 8.009418 8.284687 0 16.186657-3.340071 22.255887-9.398044l15.405875-15.387455 42.261523-42.417065 7.975649-7.828292L954.891528 636.155694c5.438872-5.471618 8.211009-12.985756 7.80578-21.167089l-0.030699-0.544399 0.030699-0.550539C963.102536 605.688799 960.33654 598.180801 954.895621 592.732719L954.895621 592.732719z"></path>
+                        </svg>
+                        <span class="info-item-text">退出登录</span>
+                        </a></li>
+                </ul>
+                <ul class="login-info-wrap isLogin">
+                    <li class="info-item">
+                        <a th:href="@{/index}">
+                            <svg class="MuiSvgIcon-root svg-icon-logout" focusable="false" viewBox="0 0 1024 1024" aria-hidden="true">
+                                <path d="M812.243667 1020.412288l-666.847717 0c-33.855062 0-61.398372-27.54331-61.398372-61.398372L83.997578 65.491597c0-33.855062 27.54331-61.398372 61.398372-61.398372l666.847717 0c33.855062 0 61.398372 27.54331 61.398372 61.398372l0 180.888813-61.398372 0L812.243667 65.503876c-0.00307 0.029676-0.058328-0.021489-0.090051-0.037862l-666.757666 0.024559c0.042979 0.005117-0.008186 0.058328-0.024559 0.090051l0.024559 893.432269c0.00307-0.079818 0.057305 0.008186 0.090051 0.023536l666.757666-0.023536c-0.042979-0.005117 0.008186-0.058328 0.023536-0.090051l-0.023536-139.001821 61.398372 0 0 139.091872C873.642039 992.868979 846.098729 1020.412288 812.243667 1020.412288z"></path>
+                                <path d="M954.895621 592.732719 784.793478 422.0125l-0.019443 0.01842-28.595268-28.698622-32.086789-32.124651c-5.231141-5.234211-12.186554-8.113795-19.599384-8.113795-7.453762 0-14.479783 2.910283-19.774369 8.204869-10.05603 10.037611-11.031241 25.799596-2.360767 36.85028l49.272193 49.454342 0.01228-0.016373L870.07991 586.525344 321.376986 586.525344c-15.311731 0-27.770484 12.518105-27.770484 27.918863 0 15.394618 12.458753 27.912723 27.770484 27.912723L870.07991 642.35693 744.438375 768.458953l-7.969509 7.831362-58.655911 58.873876c-5.79089 11.514241-3.994987 24.808012 4.653997 33.463136 5.15337 5.158487 12.143575 8.009418 19.676132 8.009418 8.284687 0 16.186657-3.340071 22.255887-9.398044l15.405875-15.387455 42.261523-42.417065 7.975649-7.828292L954.891528 636.155694c5.438872-5.471618 8.211009-12.985756 7.80578-21.167089l-0.030699-0.544399 0.030699-0.550539C963.102536 605.688799 960.33654 598.180801 954.895621 592.732719L954.895621 592.732719z"></path>
+                            </svg>
+                            <span class="info-item-text">登录</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </h2>
-    </div>
-    <!-- 导航 -->
-    <div class="container tool-nav " style="padding-top: 95px;">
-        <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="/">男生小说</a></li>
-            <li role="presentation"><a href="/girls">女生小说</a></li>
-            <li role="presentation"><a href="/public">出版读物</a></li>
-        </ul>
-    </div>
-
-
-    <!-- 软件工具明细 -->
-    <div class="container" style="padding-top: 15px;" th:each="book:${allBooks}">
-        <!-- 添加标题 常用导航 -->
-        <div style="padding-top: 15px;padding-bottom: 15px" >
-            <span class="glyphicon glyphicon-tags"  th:text="${book.getName()}"></span>
         </div>
-        <div class="row text-center">
-            <div class="col-md-3 col-xs-12 col-sm-2 tool-li" th:each="ss:${book.getMy()}">
-                <a th:href="'/'+${ss.getBookId()}" target="_blank">
-                   <img th:src="${ss.getBookImage()}" alt="null">
-                </a>
-                <div class="text-left" style="margin-top:10px" th:text="${ss.getBookName}">name</div>
-                <div class="text-left text-color-height" th:text="${ss.getBookIntro()}">desc</div>
-                <div class="text-left text-color-height " th:text="${ss.getBookAuthorName()}">author</div>
-            </div>
+    </header>
+</div>
+<div class="container tool-nav " style="padding-top: 95px;">
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="/">男生小说</a></li>
+        <li role="presentation"><a href="/girls">女生小说</a></li>
+        <li role="presentation"><a href="/public">出版读物</a></li>
+    </ul>
+</div>
+<!-- 软件工具明细 -->
+<div class="container" style="padding-top: 15px;" th:each="book:${allBooks}">
+    <!-- 添加标题 常用导航 -->
+    <div style="padding-top: 15px;padding-bottom: 15px" >
+        <span class="glyphicon glyphicon-tags"  th:text="${book.getName()}"></span>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-3 col-xs-12 col-sm-2 tool-li" th:each="ss:${book.getMy()}">
+            <a th:href="'/'+${ss.getBookId()}" target="_blank">
+                <img th:src="${ss.getBookImage()}" alt="null">
+            </a>
+            <div class="text-left" style="margin-top:10px" th:text="${ss.getBookName}">name</div>
+            <div class="text-left text-color-height" th:text="${ss.getBookIntro()}">desc</div>
+            <div class="text-left text-color-height " th:text="${ss.getBookAuthorName()}">author</div>
         </div>
     </div>
 </div>
-</body></html>
+</body>
+<script type="application/javascript" src="../static/js/jquery.min.js"></script>
+<script type="application/javascript" src="../static/js/bootstrap.min.js"></script>
+<script type="application/javascript" src="../static/js/jquery.cookie.min.js"></script>
+<script src="../static/js/book_store.js" type="application/javascript"></script>
+</html>
