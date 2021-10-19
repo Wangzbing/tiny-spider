@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "140144c4-f7dd-4f2d-9a34-e3dad9914e8d",
+		"name": "aso output ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "预定监控",
+			"item": [
+				{
+					"name": "State",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer adnfkgh834nbsd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"US\",\r\n    \"lastState\": \"NOT_EXIST\",\r\n    \"currentState\": \"PREORDER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{asoHost}}/query/gp/app-state",
+							"protocol": "http",
+							"host": [
+								"{{asoHost}}"
+							],
+							"path": [
+								"query",
+								"gp",
+								"app-state"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State proorder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer adnfkgh834nbsd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"KR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{asoHost}}/query/gp/preorder",
+							"protocol": "http",
+							"host": [
+								"{{asoHost}}"
+							],
+							"path": [
+								"query",
+								"gp",
+								"preorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State proorder as",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer adnfkgh834nbsd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"CN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{asoHost}}/query/as/preorder",
+							"protocol": "http",
+							"host": [
+								"{{asoHost}}"
+							],
+							"path": [
+								"query",
+								"as",
+								"preorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "as State",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer adnfkgh834nbsd",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"region\": \"US\",\r\n    \"lastState\": \"NOT_EXIST\",\r\n    \"currentState\": \"PREORDER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{asoHost}}/query/as/app-state",
+							"protocol": "http",
+							"host": [
+								"{{asoHost}}"
+							],
+							"path": [
+								"query",
+								"as",
+								"app-state"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
