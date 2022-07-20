@@ -10,6 +10,7 @@ import com.tiny.cloud.bookspider.model.repository.BookCategoryRepository;
 import com.tiny.cloud.bookspider.model.repository.BookInfoRepository;
 import com.tiny.cloud.bookspider.model.repository.RelInfoCategoryRepository;
 import com.tiny.cloud.spider.common.snowflake.IDGenerator;
+import com.xxl.job.core.context.XxlJobHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -65,6 +66,7 @@ public class BookSpider implements PageProcessor {
         Html html = page.getHtml();
         Document parse = Jsoup.parse(html.get());
         parse.select("ul").stream().filter(s->s.hasClass("all-img-list")).findFirst().ifPresent(s->{
+            XxlJobHelper.log("开始爬取书籍详情");
             Elements lis = s.select("li");
             lis.forEach(each->{
                 BookInfo bookInfo = new BookInfo();
@@ -111,6 +113,7 @@ public class BookSpider implements PageProcessor {
                 bookInfo.setBookId(book);
                 BookInfo bookOrigin = infoRepository.findByBookOriginId(bookInfo.getBookOriginId());
                 if (bookOrigin==null){
+                    XxlJobHelper.log("爬取书籍结束 书籍名称为{}",bookInfo.getBookName());
                     infoRepository.save(bookInfo);
                 }
                 infos.select("p a").stream().filter(x->x.hasClass("go-sub-type")).findFirst().ifPresent(x->{

@@ -1,5 +1,6 @@
 package com.tiny.cloud.bookspider.spider.model;
 
+import cn.hutool.core.codec.Base64;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

@@ -16,5 +16,5 @@ public interface SpiderService {
      */
     void saveRank();
 
-    void saveContent();
+    void saveContent(String jobParam);
 }

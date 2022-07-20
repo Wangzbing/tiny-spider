@@ -1,20 +1,22 @@
 package com.tiny.cloud.bookspider.sevice.impl;
 
-import com.tiny.cloud.bookspider.event.query.ContentEvent;
 import com.tiny.cloud.bookspider.event.query.InfoQueryEvent;
 import com.tiny.cloud.bookspider.model.entity.BookInfo;
-import com.tiny.cloud.bookspider.model.repository.BookChapterRepository;
 import com.tiny.cloud.bookspider.model.repository.BookInfoRepository;
 import com.tiny.cloud.bookspider.publish.Publisher;
 import com.tiny.cloud.bookspider.sevice.SpiderService;
+import com.tiny.cloud.common.utils.OkHttpUtils;
 import com.tiny.cloud.spider.common.strategy.annotations.MessageHandler;
 import com.tiny.cloud.spider.common.strategy.enums.SpiderCategory;
 import com.tiny.cloud.spider.common.strategy.enums.SpiderStore;
+import com.tiny.cloud.spider.common.thread.ThreadPoolManager;
+import okhttp3.Response;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
 
 /**
  * @author wangzb
@@ -32,7 +34,11 @@ public class BookInfoSpiderServiceImpl implements SpiderService {
     BookInfoRepository repository;
 
     @Resource
-    BookChapterRepository chapterRepository;
+    ThreadPoolManager poolManager;
+
+    public static ExecutorService pool;
+
+    private static final String HOST="https://www.yanqingshu.com";
     /**
      * 保存详情
      */
@@ -52,10 +58,31 @@ public class BookInfoSpiderServiceImpl implements SpiderService {
     }
 
     @Override
-    public void saveContent(){
-        repository.findAll().parallelStream().forEach(s->{
-            ContentEvent contentEvent = new ContentEvent(s);
-            publisher.publishEvent(contentEvent);
-        });
+    public void saveContent(String jobParam){
+        //线程
+        repository.findAll().forEach(s-> CompletableFuture.supplyAsync(()->save(s),pool));
+    }
+
+    private CompletableFuture<?> save(BookInfo s) {
+        try {
+            Response data = OkHttpUtils.getInstance().getData(HOST + "/search_" + s.getBookName() + ".html");
+            if (data.isSuccessful()) {
+                if (data.body() != null) {
+                    String html = data.body().string();
+
+                } else {
+                    addContentFail(s.getBookId(), s.getBookName());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    @Async
+    public void addContentFail(Long bookId, String bookName) {
+        
     }
 }

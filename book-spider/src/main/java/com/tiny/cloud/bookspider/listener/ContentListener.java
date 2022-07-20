@@ -7,7 +7,9 @@ import com.tiny.cloud.bookspider.model.entity.BookInfo;
 import com.tiny.cloud.bookspider.model.repository.BookInfoRepository;
 import com.tiny.cloud.bookspider.spider.InfoSpider;
 import com.tiny.cloud.bookspider.spider.model.SpiderBO;
+import com.tiny.cloud.common.config.XxlJobAutoConfig;
 import com.tiny.cloud.spider.common.base.StringPool;
+import com.xxl.job.core.context.XxlJobHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.event.EventListener;
@@ -27,18 +29,15 @@ import javax.annotation.Resource;
 public class ContentListener {
     @Resource
     BookInfoRepository infoRepository;
-    @Resource
-    InfoSpider infoSpider;
+
 
     private static final String HOST="https://www.yanqingshu.com";
 
-    @EventListener(classes = ContentEvent.class)
-    public void queryAll(ApplicationEvent applicationEvent) throws InterruptedException {
+    @Async
+    public void queryAll(ApplicationEvent applicationEvent){
         ContentEvent infoQueryEvent=(ContentEvent)applicationEvent;
         BookInfo source = (BookInfo) infoQueryEvent.getSource();
-        infoSpider.setKeys(new SpiderBO().setId(source.getBookId()).setUrl(source.getBookName()));
-        //寻找对应小说的章节，章节url
-        Spider.create(infoSpider).addUrl(HOST+"/search_"+source.getBookName()+".html").thread(5).run();
+        XxlJobHelper.log("开始爬取章节内容{}",source.getBookName());
         //便利每个章节的地址，
     }
 
